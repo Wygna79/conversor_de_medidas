@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor Culinário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay">
+
+    <header>
+      <h1>🍳 Conversor de Medidas Culinárias</h1>
+      <p>Converta ingredientes líquidos e sólidos de forma rápida e prática.</p>
+    </header>
+
+    <main>
+
+      <!-- CARD CONVERSÃO -->
+      <section class="card">
+
+        <h2>Conversão</h2>
+
+        <div class="grupo">
+
+          <label>Ingrediente</label>
+
+          <input type="text" id="ingrediente" placeholder="Ex: Açúcar">
+
+        </div>
+
+        <div class="grupo">
+
+          <label>Tipo de ingrediente</label>
+
+          <select id="tipo">
+
+            <option value="solido">Sólido</option>
+            <option value="liquido">Líquido</option>
+
+          </select>
+
+        </div>
+
+        <div class="linha">
+
+          <div class="grupo">
+
+            <label>Valor</label>
+
+            <input type="number" id="valor" placeholder="Digite o valor">
+
+          </div>
+
+          <div class="grupo">
+
+            <label>De</label>
+
+            <select id="origem">
+
+              <option value="xicara">Xícara</option>
+              <option value="colher_sopa">Colher de sopa</option>
+              <option value="colher_cha">Colher de chá</option>
+              <option value="ml">Mililitro</option>
+              <option value="l">Litro</option>
+              <option value="g">Grama</option>
+              <option value="kg">Quilograma</option>
+
+            </select>
+
+          </div>
+
+          <div class="grupo">
+
+            <label>Para</label>
+
+            <select id="destino">
+
+              <option value="xicara">Xícara</option>
+              <option value="colher_sopa">Colher de sopa</option>
+              <option value="colher_cha">Colher de chá</option>
+              <option value="ml">Mililitro</option>
+              <option value="l">Litro</option>
+              <option value="g">Grama</option>
+              <option value="kg">Quilograma</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <button id="converter">Converter</button>
+
+      </section>
+
+      <!-- RESULTADO -->
+      <section class="card">
+
+        <h2>Resultado</h2>
+
+        <div id="resultado">
+          Nenhuma conversão realizada.
+        </div>
+
+      </section>
+
+      <!-- LISTA -->
+      <section class="card">
+
+        <h2>Ingredientes Convertidos</h2>
+
+        <ul id="listaConversoes"></ul>
+
+      </section>
+
+      <!-- TABELA -->
+      <section class="card">
+
+        <h2>Referência Rápida</h2>
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Medida</th>
+              <th>Equivale a</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>1 xícara</td>
+              <td>240 ml</td>
+            </tr>
+
+            <tr>
+              <td>1 colher de sopa</td>
+              <td>15 ml</td>
+            </tr>
+
+            <tr>
+              <td>1 colher de chá</td>
+              <td>5 ml</td>
+            </tr>
+
+            <tr>
+              <td>1 litro</td>
+              <td>1000 ml</td>
+            </tr>
+
+            <tr>
+              <td>1 kg</td>
+              <td>1000 g</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

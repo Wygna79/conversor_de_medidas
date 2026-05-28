@@ -14,18 +14,13 @@ botao.addEventListener("click", converter);
 function converter(){
 
   // PEGANDO VALORES
-  let ingrediente =
-  document.getElementById("ingrediente").value;
-  let valor =
-  Number(document.getElementById("valor").value);
-  let origem =
-  document.getElementById("origem").value;
-  let destino =
-  document.getElementById("destino").value;
+  let ingrediente = document.getElementById("ingrediente").value;
+  let valor = Number(document.getElementById("valor").value);
+  let origem = document.getElementById("origem").value;
+  let destino = document.getElementById("destino").value;
 
   // OBJETO
   const medidas = {
-
     xicara: 240,
     colher_sopa: 15,
     colher_cha: 5,

@@ -85,115 +85,70 @@ main{
 }
 
 .resultado-area{
-
   flex: 1;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 15px;
 
 }
 
 .resultado-box{
-
   border: 2px solid #d8d8c2;
-
   border-radius: 20px;
-
   padding: 30px;
-
   background-color: #fffef4;
-
   height: 100%;
-
 }
 
 .titulo-resultado{
-
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   margin-bottom: 40px;
-
 }
 
 .titulo-resultado i{
-
   color: #919167;
-
   font-size: 28px;
-
 }
 
 .titulo-resultado h2{
-
   color: #4f6d1d;
-
   font-size: 38px;
-
 }
 
 #resultado{
-
   text-align: center;
-
   font-size: 55px;
-
   color: #5c6a42;
-
   font-weight: bold;
-
 }
 
 .grupo{
-
   display: flex;
-
   flex-direction: column;
-
   margin-bottom: 20px;
-
 }
 
 .grupo label{
-
   margin-bottom: 10px;
-
   font-weight: bold;
-
   font-size: 20px;
-
   color: #5c6a42;
-
 }
 
 input, select{
-
   height: 60px;
-
   border-radius: 14px;
-
   border: 2px solid #d8d8d8;
-
   padding-left: 15px;
-
   font-size: 22px;
-
   background-color: white;
-
 }
 
 .linha{
-
   display: flex;
-
   gap: 20px;
-
 }
 
 .linha .grupo{

@@ -152,43 +152,27 @@ input, select{
 }
 
 .linha .grupo{
-
   flex: 1;
-
 }
 
 button{
-
   height: 70px;
-
   border: none;
-
   border-radius: 14px;
-
   background-color: #f56218;
-
   color: white;
-
   font-size: 28px;
-
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.3s;
-
 }
 
 button:hover{
-
   background-color: #ff9d2e;
-
 }
 
 button i{
-
   margin-left: 10px;
-
 }
 
 .duas-colunas{

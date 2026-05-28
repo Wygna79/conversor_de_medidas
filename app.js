@@ -1,5 +1,8 @@
 // BOTÃO
-const botao = document.getElementById("converter");
+const botao = document.getElementById("botaoConverter");
+
+// RESULTADO
+const resultado = document.getElementById("resultado");
 
 // LISTA
 const lista = document.getElementById("listaConversoes");
@@ -7,22 +10,20 @@ const lista = document.getElementById("listaConversoes");
 // EVENTO
 botao.addEventListener("click", converter);
 
-
 // FUNÇÃO
 function converter(){
 
   // PEGANDO VALORES
-  let ingrediente = document.getElementById("ingrediente").value;
+  let ingrediente =
+  document.getElementById("ingrediente").value;
+  let valor =
+  Number(document.getElementById("valor").value);
+  let origem =
+  document.getElementById("origem").value;
+  let destino =
+  document.getElementById("destino").value;
 
-  let tipo = document.getElementById("tipo").value;
-
-  let valor = Number(document.getElementById("valor").value);
-
-  let origem = document.getElementById("origem").value;
-
-  let destino = document.getElementById("destino").value;
-
-  // OBJETO COM EQUIVALÊNCIAS
+  // OBJETO
   const medidas = {
 
     xicara: 240,
@@ -32,48 +33,40 @@ function converter(){
     l: 1000,
     g: 1,
     kg: 1000
-
   };
 
   // VALIDAÇÃO
   if(valor <= 0){
-
-    document.getElementById("resultado").innerHTML =
-    "Digite um valor válido.";
-
+    resultado.innerHTML = "Erro";
     return;
-
   }
 
   // CONVERSÃO
-  let valorEmBase = valor * medidas[origem];
+  let valorBase =
+  valor * medidas[origem];
 
-  let resultado = valorEmBase / medidas[destino];
+  let resultadoFinal =
+  valorBase / medidas[destino];
 
-  // CONDICIONAL
-  if(tipo === "liquido"){
+  // CASAS DECIMAIS
+  resultadoFinal =
+  resultadoFinal.toFixed(2);
 
-    resultado = resultado.toFixed(2);
+  // MOSTRAR RESULTADO
+  resultado.innerHTML =
+  resultadoFinal;
 
-  }else{
+  // REMOVER MENSAGEM
+  lista.innerHTML += "";
 
-    resultado = resultado.toFixed(1);
-
-  }
-
-  // RESULTADO NA TELA
-  document.getElementById("resultado").innerHTML =
-  `${valor} ${origem} de ${ingrediente}
-   equivalem a ${resultado} ${destino}.`;
-
-  // CRIANDO ITEM
-  let item = document.createElement("li");
-
+  // ITEM
+  let item =
+  document.createElement("li");
   item.innerHTML =
-  `${ingrediente}: ${valor} ${origem}
-   → ${resultado} ${destino}`;
+  `<strong>${ingrediente}</strong><br>
+  ${valor} ${origem}
+  → ${resultadoFinal} ${destino}`;
 
-  // ADICIONANDO NA LISTA
+  // ADICIONAR
   lista.appendChild(item);
-
 }

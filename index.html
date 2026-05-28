@@ -5,170 +5,184 @@
   <title>Conversor Culinário</title>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-  <div class="overlay">
-
-    <header>
-      <h1>🍳 Conversor de Medidas Culinárias</h1>
-      <p>Converta ingredientes líquidos e sólidos de forma rápida e prática.</p>
-    </header>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <i class="fa-solid fa-kitchen-set"></i>
+      <div>
+        <h1>Conversor de Medidas Culinárias</h1>
+        <p>Converta ingredientes líquidos e sólidos com facilidade.</p>
+      </div>
+    </div>
+    <i class="fa-solid fa-pot-food panela"></i>
+  </header>
 
     <main>
-
       <!-- CARD CONVERSÃO -->
-      <section class="card">
+     <section class="card conversao">
+      <div class="titulo-card">
+        <i class="fa-solid fa-mug-hot"></i>
+        <h2>Nova Conversão</h2>
+      </div>
 
-        <h2>Conversão</h2>
-
-        <div class="grupo">
-
-          <label>Ingrediente</label>
-
-          <input type="text" id="ingrediente" placeholder="Ex: Açúcar">
-
-        </div>
-
-        <div class="grupo">
-
-          <label>Tipo de ingrediente</label>
-
-          <select id="tipo">
-
-            <option value="solido">Sólido</option>
-            <option value="liquido">Líquido</option>
-
-          </select>
-
-        </div>
+      <div class="conteudo-conversao">
+      <!-- ESQUERDA -->
+        <div class="formulario">
+          <div class="grupo">
+            <label>Ingrediente</label>
+            <input type="text" id="ingrediente" placeholder="Ex: Açúcar, Leite, Farinha...">
+          </div>
 
         <div class="linha">
-
           <div class="grupo">
-
             <label>Valor</label>
-
             <input type="number" id="valor" placeholder="Digite o valor">
-
           </div>
 
           <div class="grupo">
-
-            <label>De</label>
-
-            <select id="origem">
-
-              <option value="xicara">Xícara</option>
-              <option value="colher_sopa">Colher de sopa</option>
-              <option value="colher_cha">Colher de chá</option>
-              <option value="ml">Mililitro</option>
-              <option value="l">Litro</option>
-              <option value="g">Grama</option>
-              <option value="kg">Quilograma</option>
-
+            <label>Tipo de ingrediente</label>
+            <select id="tipo">
+              <option value="solido">Sólido</option>
+              <option value="liquido">Líquido</option>
             </select>
-
           </div>
-
-          <div class="grupo">
-
-            <label>Para</label>
-
-            <select id="destino">
-
-              <option value="xicara">Xícara</option>
-              <option value="colher_sopa">Colher de sopa</option>
-              <option value="colher_cha">Colher de chá</option>
-              <option value="ml">Mililitro</option>
-              <option value="l">Litro</option>
-              <option value="g">Grama</option>
-              <option value="kg">Quilograma</option>
-
-            </select>
-
-          </div>
-
         </div>
 
-        <button id="converter">Converter</button>
+         <div class="linha">
+            <div class="grupo">
+              <label>De (unidade de origem)</label>
+              <select id="origem">
+                <option value="xicara">Xícara</option>
+                <option value="colher_sopa">Colher de sopa</option>
+                <option value="colher_cha">Colher de chá</option>
+                <option value="ml">Mililitro (ml)</option>
+                <option value="l">Litro (l)</option>
+                <option value="g">Grama (g)</option>
+                <option value="kg">Quilograma (kg)</option>
+              </select>
+            </div>
 
-      </section>
+            <div class="grupo">
+              <label>Para (unidade de destino)</label>
+              <select id="destino">
+                <option value="ml">Mililitro (ml)</option>
+                <option value="xicara">Xícara</option>
+                <option value="colher_sopa">Colher de sopa</option>
+                <option value="colher_cha">Colher de chá</option>
+                <option value="l">Litro (l)</option>
+                <option value="g">Grama (g)</option>
+                <option value="kg">Quilograma (kg)</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
       <!-- RESULTADO -->
-      <section class="card">
+        <div class="resultado-area">
+          <div class="resultado-box">
+            <div class="titulo-resultado">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <h2>Resultado</h2>
+            </div>
 
-        <h2>Resultado</h2>
+            <div id="resultado">
+              ---
+            </div>
+          </div>
 
-        <div id="resultado">
-          Nenhuma conversão realizada.
+          <button id="botaoConverter">
+
+            Calcular Resultado
+
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
+      </div>
+    </section>
 
-      </section>
-
-      <!-- LISTA -->
+    <!-- CONVERSÕES -->
+    <div class="duas-colunas">
       <section class="card">
-
-        <h2>Ingredientes Convertidos</h2>
-
-        <ul id="listaConversoes"></ul>
-
+        <div class="titulo-card">
+          <i class="fa-solid fa-clipboard-list"></i>
+          <h2>Conversões realizadas</h2>
+        </div>
+        <ul id="listaConversoes">
+          <p class="mensagem">
+            Nenhuma conversão ainda.
+          </p>
+        </ul>
       </section>
 
       <!-- TABELA -->
       <section class="card">
-
-        <h2>Referência Rápida</h2>
-
+        <div class="titulo-card">
+          <i class="fa-solid fa-book-open"></i>
+          <h2>Referência rápida</h2>
+        </div>
+        
         <table>
-
           <thead>
-
             <tr>
               <th>Medida</th>
               <th>Equivale a</th>
+              <th>Tipo</th>
             </tr>
-
           </thead>
 
           <tbody>
-
             <tr>
               <td>1 xícara</td>
               <td>240 ml</td>
+              <td>Líquido</td>
             </tr>
 
             <tr>
               <td>1 colher de sopa</td>
               <td>15 ml</td>
+              <td>Líquido</td>
             </tr>
 
             <tr>
               <td>1 colher de chá</td>
               <td>5 ml</td>
+              <td>Líquido</td>
             </tr>
 
             <tr>
               <td>1 litro</td>
               <td>1000 ml</td>
+              <td>Líquido</td>
             </tr>
 
             <tr>
               <td>1 kg</td>
               <td>1000 g</td>
+              <td>Sólido</td>
+            </tr>
+
+            <tr>
+              <td>1 g</td>
+              <td>0,001 kg</td>
+              <td>Sólido</td>
             </tr>
 
           </tbody>
-
         </table>
-
       </section>
+    </div>
+  </main>
 
-    </main>
+  <!-- FOOTER -->
+  <footer>
+    Feito com amor para facilitar suas receitas!
+  </footer>
 
-  </div>
-
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
